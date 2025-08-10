@@ -1,49 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Video Background Website</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuo Brand</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-        font-family: Arial, sans-serif;
-        color: white;
-        text-align: center;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
     }
-    video {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-        z-index: -1;
-        object-fit: cover;
+
+    /* Video background container */
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
     }
-    .content {
-        position: relative;
-        top: 40%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.4);
-        padding: 20px;
-        border-radius: 10px;
+
+    .video-bg video {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
     }
-</style>
+
+    /* Overlay text container */
+    .hero-content {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: #FFBF04; /* Amber */
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    }
+
+    /* Button */
+    .btn {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #222;
+      background-color: #FFBF04;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255,191,4,0.6);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #e6ac03;
+      box-shadow: 0 6px 20px rgba(230,172,3,0.8);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<video autoplay muted loop>
-    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.videvo.net/videvo_files/video/free/2019-11/small_watermarked/191022_03_Drone_Forest_4k_016_preview.webm" type="video/webm" />
+      <source src="https://cdn.videvo.net/videvo_files/video/free/2019-11/small_watermarked/191022_03_Drone_Forest_4k_016_preview.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-<div class="content">
-    <h1>Welcome to My Website</h1>
-    <p>This site has a full-screen moving video background.</p>
-</div>
+  <div class="hero-content">
+    <h1>Nuo</h1>
+    <p>Experience luxury inspired by nature.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </div>
 
 </body>
 </html>
